@@ -1,6 +1,6 @@
 /*!
  * pixi.js - v4.1.1
- * Compiled Wed, 09 Nov 2016 16:06:07 UTC
+ * Compiled Wed, 09 Nov 2016 20:48:44 UTC
  *
  * pixi.js is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
@@ -20671,11 +20671,7 @@ var SpriteRenderer = function (_ObjectRenderer) {
 
         _ObjectRenderer.prototype.destroy.call(this);
 
-        for (var _i = 0; _i < this.shaders.length; _i++) {
-            if (this.shaders[_i]) {
-                this.shaders[_i].destroy();
-            }
-        }
+        this.shader.destroy();
 
         this.vertexBuffers = null;
         this.vaos = null;
@@ -20684,8 +20680,8 @@ var SpriteRenderer = function (_ObjectRenderer) {
 
         this.sprites = null;
 
-        for (var _i2 = 0; _i2 < this.buffers.length; ++_i2) {
-            this.buffers[_i2].destroy();
+        for (var _i = 0; _i < this.buffers.length; ++_i) {
+            this.buffers[_i].destroy();
         }
     };
 
